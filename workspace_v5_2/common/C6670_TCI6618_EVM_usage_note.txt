@@ -1,0 +1,27 @@
+This example use following code (in KeyStone_common.h) to automatically determine the DSP type between C6678, TCI6614 and C6670, and then execute corresponding code for different DSP. 
+
+static inline TDSP_Board_Type KeyStone_Get_dsp_board_type()
+{     
+      TDSP_Board_Type DSP_Board_Type= UNKNOWN;
+      Uint32 deviceID= gpBootCfgRegs->DEVICE_ID_REG0&0x0FFFFFFF;
+      
+      if(0x0009D02F == deviceID)
+            DSP_Board_Type= DUAL_NYQUIST_EVM;
+      if(0x0B94102F == deviceID)
+      {
+            DSP_Board_Type= C6670_EVM;
+            //DSP_Board_Type= DUAL_NYQUIST_EVM;
+      }
+      if(0x0009E02F == deviceID)
+            DSP_Board_Type= C6678_EVM;
+      if(0x0B96202F == deviceID)
+            DSP_Board_Type= TCI6614_EVM;
+
+      return DSP_Board_Type;
+}
+
+Since C6670_EVM and DUAL_NYQUIST_EVM use same type DSP, so, the code can not differentiate them automatically. 
+By default, if the code detect DSP type is C6670, it set the board type as:
+            DSP_Board_Type= C6670_EVM;
+If you need run this example on DUAL_NYQUIST_EVM, you need remove/comment above code and enable following code:
+            DSP_Board_Type= DUAL_NYQUIST_EVM;

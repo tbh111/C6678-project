@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="325" key="DIALOG_WIDTH"/>
+		<item value="418" key="DIALOG_Y_ORIGIN"/>
+		<item value="2185" key="DIALOG_X_ORIGIN"/>
+		<item value="499" key="DIALOG_HEIGHT"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="clock_MHz" key="selection"/>
+		<list key="findhistory">
+			<item value="clock_MHz"/>
+			<item value="tFAW"/>
+			<item value="CSL_EMIF4F_RDWR_LVL_RMP_CTRL_REG_RDWRLVL"/>
+			<item value="CSL_EMIF4F_RDWR_LVL_RMP_CTRL_REG_RDWRLVL_EN_MASK"/>
+			<item value=" RDWR_LVL_RMP_CTRL"/>
+			<item value="DEVICE_ID_REG0"/>
+			<item value="uiRev"/>
+			<item value="KeyStone_DDR_read_incremental_leveling"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+</section>
