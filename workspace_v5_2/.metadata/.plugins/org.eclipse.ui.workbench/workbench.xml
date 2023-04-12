@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="33" version="2.0">
 <workbenchAdvisor/>
-<window height="1071" maximized="true" width="1574" x="389" y="103">
+<window height="1209" maximized="true" width="1717" x="639" y="40">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.ti.ccstudio.system.setup.ui.views.TargetConfigurationView"/>
 </fastViewData>
 <perspectiveBar>
-<itemSize x="160"/>
+<itemSize x="258"/>
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
@@ -23,11 +23,11 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="122" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="com.ti.ccstudio.system.setup.editor.editors.MultiPageXMLEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="com.ti.ccstudio.ui.cmdFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.ti.ccstudio.system.setup.editor.editors.MultiPageXMLEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.ti.ccstudio.ui.cmdFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.cdt.ui.editor.asm.AsmEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -38,70 +38,17 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
-<part id="7"/>
-<part id="8"/>
-<part id="9"/>
-<part id="10"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="mem_test_main.c" partName="mem_test_main.c" path="C:/Users/tbh/workspace_v5_2/Memory_Test/src/mem_test_main.c" title="mem_test_main.c" tooltip="Memory_Test/src/mem_test_main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Memory_Test/src/mem_test_main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8050" selectionTopPixel="5773"/>
-</editor>
-<editor id="org.eclipse.ui.DefaultTextEditor" name="log.txt" partName="log.txt" path="C:/Users/tbh/workspace_v5_2/Memory_Test/log.txt" title="log.txt" tooltip="Memory_Test/log.txt" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Memory_Test/log.txt"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="526" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="KeyStone_DDR_Init.c" partName="KeyStone_DDR_Init.c" path="C:/Users/tbh/workspace_v5_2/common/KeyStone_DDR_Init.c" title="KeyStone_DDR_Init.c" tooltip="Memory_Test/src/KeyStone_DDR_Init.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Memory_Test/src/KeyStone_DDR_Init.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="38" selectionOffset="10269" selectionTopPixel="6597"/>
-</editor>
-<editor id="com.ti.ccstudio.ui.cmdFileEditor" name="platform_utils.cmd" partName="platform_utils.cmd" path="C:/Users/tbh/workspace_v5_2/HelloWorld/platform_utils.cmd" title="platform_utils.cmd" tooltip="HelloWorld/platform_utils.cmd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/HelloWorld/platform_utils.cmd"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1839" selectionTopPixel="490"/>
-</editor>
-<editor id="com.ti.ccstudio.system.setup.editor.editors.MultiPageXMLEditor" name="TMS320C6678.ccxml" partName="TMS320C6678.ccxml" path="C:/Users/tbh/workspace_v5_2/Memory_Test/TMS320C6678.ccxml" title="TMS320C6678.ccxml" tooltip="Memory_Test/TMS320C6678.ccxml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Memory_Test/TMS320C6678.ccxml"/>
-</editor>
-<editor id="com.ti.ccstudio.ui.cmdFileEditor" name="KeyStone_mem_Test.cmd" partName="KeyStone_mem_Test.cmd" path="C:/Users/tbh/workspace_v5_2/Memory_Test/KeyStone_mem_Test.cmd" title="KeyStone_mem_Test.cmd" tooltip="Memory_Test/KeyStone_mem_Test.cmd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Memory_Test/KeyStone_mem_Test.cmd"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2156" selectionTopPixel="690"/>
-</editor>
-<editor id="com.ti.ccstudio.ui.cmdFileEditor" name="C6678_unified.cmd" partName="C6678_unified.cmd" path="C:/Users/tbh/workspace_v5_2/Memory_Test/C6678_unified.cmd" title="C6678_unified.cmd" tooltip="Memory_Test/C6678_unified.cmd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Memory_Test/C6678_unified.cmd"/>
-<editorState selectionHorizontalPixel="0" selectionLength="1" selectionOffset="1830" selectionTopPixel="332"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="KeyStone_common.c" partName="KeyStone_common.c" path="C:/Users/tbh/workspace_v5_2/common/KeyStone_common.c" title="KeyStone_common.c" tooltip="Memory_Test/src/KeyStone_common.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Memory_Test/src/KeyStone_common.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="71" selectionOffset="2206" selectionTopPixel="810"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="KeyStone_DDR_Init.c" partName="KeyStone_DDR_Init.c" title="KeyStone_DDR_Init.c" tooltip="C:\Users\tbh\workspace_v5_2\common\KeyStone_DDR_Init.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="C:\Users\tbh\workspace_v5_2\common\KeyStone_DDR_Init.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="18201" selectionTopPixel="11983"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="csl_bootcfgaux.h" partName="csl_bootcfgaux.h" title="csl_bootcfgaux.h" tooltip="C:\ti\pdk_C6678_1_1_2_5\packages\ti\csl\csl_bootcfgaux.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl/csl_bootcfgaux.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="10981" selectionTopPixel="9349"/>
-</editor>
 </editors>
 <views>
-<view id="org.eclipse.ui.views.ProgressView" partName="Progress">
-<viewState/>
-</view>
+<view id="org.eclipse.ui.views.ProgressView" partName="Progress"/>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
 <viewState/>
 </view>
-<view id="com.ti.ccstudio.multi.purpose.view.ui.TargetSpecificView" partName="Memory Map">
-<viewState/>
-</view>
+<view id="com.ti.ccstudio.multi.purpose.view.ui.TargetSpecificView" partName="Control Panel"/>
 <view id="org.eclipse.debug.ui.VariableView" partName="Variables">
 <viewState/>
 </view>
@@ -120,14 +67,10 @@
 <view id="org.eclipse.debug.ui.RegisterView" partName="Registers">
 <viewState/>
 </view>
-<view id="org.eclipse.cdt.ui.callHierarchy" partName="Call Hierarchy">
-<viewState showFilesInLabels="false" variableFilter="false"/>
-</view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (6 items)"/>
-<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings (2 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="105" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -137,14 +80,15 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
 </view>
+<view id="org.eclipse.cdt.ui.callHierarchy" partName="Call Hierarchy">
+<viewState showFilesInLabels="false" variableFilter="false"/>
+</view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
-<view id="org.eclipse.cdt.dsf.debug.ui.disassembly.view" partName="Disassembly">
-<viewState disassembly.syncActiveContext="true" disassembly.trackExpression="false"/>
-</view>
+<view id="org.eclipse.cdt.dsf.debug.ui.disassembly.view" partName="Disassembly"/>
 </views>
-<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="com.ti.ccstudio.TICPerspective">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="com.ti.ccstudio.TICPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.ti.ccstudio.internal.ui.perspectives.TICPerspectiveFactory" id="com.ti.ccstudio.TICPerspective" label="CCS Edit"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -399,7 +343,6 @@
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.cdt.ui.callHierarchy"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
-<view id="org.eclipse.debug.ui.BreakpointView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -418,13 +361,13 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="topLeft" ratio="0.1761475" ratioLeft="449" ratioRight="2100" relationship="2" relative="left">
+<info folder="true" part="topLeft" ratio="0.2355987" ratioLeft="364" ratioRight="1181" relationship="2" relative="left">
 <folder appearance="2" expanded="2">
 <page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.24960506" ratioLeft="158" ratioRight="475" relationship="4" relative="topLeft"/>
-<info folder="true" part="bottomLeft" ratio="0.84162897" ratioLeft="930" ratioRight="175" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottomLeft" ratio="0.67140603" ratioLeft="850" ratioRight="416" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -433,7 +376,7 @@
 </folder>
 </info>
 <info folder="true" part="bottomRight" ratio="0.49933246" ratioLeft="374" ratioRight="375" relationship="2" relative="bottomLeft">
-<folder activePageID="org.eclipse.cdt.ui.callHierarchy" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.cdt.ui.callHierarchy" label="Call Hierarchy"/>
 <page content="com.ti.ccstudio.scripting.console.ConsoleView" label="LabelNotFound"/>
@@ -452,14 +395,12 @@
 </folder>
 </info>
 <info folder="true" part="topRight" ratio="0.44993323" ratioLeft="337" ratioRight="412" relationship="2" relative="topLeft">
-<folder activePageID="org.eclipse.debug.ui.BreakpointView" appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.VariableView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.rtsc.xdctools.model.ui.views.packageView" ratio="0.49921012" ratioLeft="316" ratioRight="317" relationship="4" relative="left"/>
@@ -521,12 +462,12 @@
 <hide_menu_item_id id="referencesSubMenu"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.refactoring.menu"/>
 <hide_menu_item_id id="org.eclipse.jdt.debug.ui.commands.AllInstances"/>
-<hide_menu_item_id id="org.eclipse.cdt.debug.ui.command.reverseResume"/>
 <hide_menu_item_id id="org.eclipse.search.ui.openFileSearchPage"/>
+<hide_menu_item_id id="org.eclipse.cdt.debug.ui.command.reverseResume"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.edit.text.c.indent"/>
 <hide_menu_item_id id="org.eclipse.search.ui.performTextSearchWorkspace"/>
-<hide_menu_item_id id="showIn"/>
 <hide_menu_item_id id="org.eclipse.jdt.debug.ui.commands.Execute"/>
+<hide_menu_item_id id="showIn"/>
 <hide_menu_item_id id="org.eclipse.debug.internal.ui.actions.ProfileHistoryMenuAction"/>
 <hide_menu_item_id id="org.eclipse.debug.ui.commands.ProfileLast"/>
 <hide_menu_item_id id="org.eclipse.ui.navigate.goToResource"/>
@@ -543,28 +484,28 @@
 <hide_menu_item_id id="org.eclipse.jdt.ui.actions.OpenJavaSearchPage"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.buildConfigMenuAction"/>
-<hide_menu_item_id id="org.eclipse.cdt.ui.edit.opendecl"/>
 <hide_menu_item_id id="org.eclipse.ui.navigate.up"/>
+<hide_menu_item_id id="org.eclipse.cdt.ui.edit.opendecl"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.navigate.open.type.in.hierarchy"/>
 <hide_menu_item_id id="org.eclipse.search.ui.performTextSearchWorkingSet"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.read.access.in.workspace"/>
-<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.declarations.in.project"/>
 <hide_menu_item_id id="readAccessSubMenu"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.declarations.in.project"/>
 <hide_menu_item_id id="org.eclipse.search.ui.performTextSearchFile"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.implementors.in.project"/>
 <hide_menu_item_id id="org.eclipse.debug.ui.commands.OpenRunConfigurations"/>
 <hide_menu_item_id id="org.eclipse.cdt.debug.ui.command.reverseStepInto"/>
 <hide_menu_item_id id="org.eclipse.jdt.debug.ui.commands.AddClassPrepareBreakpoint"/>
-<hide_menu_item_id id="org.eclipse.debug.ui.commands.OpenProfileConfigurations"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.read.access.in.hierarchy"/>
+<hide_menu_item_id id="org.eclipse.debug.ui.commands.OpenProfileConfigurations"/>
 <hide_menu_item_id id="org.eclipse.jdt.debug.ui.commands.Watch"/>
 <hide_menu_item_id id="org.eclipse.jdt.debug.ui.commands.InstanceCount"/>
-<hide_menu_item_id id="org.eclipse.ui.navigate.goInto"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.refactor.getters.and.setters"/>
+<hide_menu_item_id id="org.eclipse.ui.navigate.goInto"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.edit.text.c.add.include"/>
 <hide_menu_item_id id="org.eclipse.ui.edit.text.open.hyperlink"/>
-<hide_menu_item_id id="org.eclipse.cdt.ui.refactor.extract.constant"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.references.in.working.set"/>
+<hide_menu_item_id id="org.eclipse.cdt.ui.refactor.extract.constant"/>
 <hide_menu_item_id id="org.eclipse.search.menu"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.edit.text.c.add.block.comment"/>
 <hide_menu_item_id id="org.eclipse.pde.ui.openPluginArtifact"/>
@@ -620,34 +561,34 @@
 <hide_menu_item_id id="org.eclipse.cdt.ui.edit.open.include.browser"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.references.in.project"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.navigate.open.type"/>
-<hide_menu_item_id id="org.eclipse.ui.navigate.openResource"/>
 <hide_menu_item_id id="org.eclipse.debug.ui.commands.RunLast"/>
+<hide_menu_item_id id="org.eclipse.ui.navigate.openResource"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.navigate.opentype"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.implementors.in.working.set"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy"/>
-<hide_menu_item_id id="org.eclipse.cdt.debug.ui.actions.ResumeAtLine"/>
 <hide_menu_item_id id="org.eclipse.ui.project.closeProject"/>
-<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.open.external.javadoc"/>
+<hide_menu_item_id id="org.eclipse.cdt.debug.ui.actions.ResumeAtLine"/>
 <hide_menu_item_id id="org.eclipse.jdt.debug.ui.commands.ForceReturn"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.open.external.javadoc"/>
 <hide_menu_item_id id="org.eclipse.ui.edit.text.shiftLeft"/>
-<hide_menu_item_id id="org.eclipse.ui.project.openProject"/>
 <hide_menu_item_id id="org.eclipse.search.ui.openSearchDialog"/>
+<hide_menu_item_id id="org.eclipse.ui.project.openProject"/>
 <hide_menu_item_id id="org.eclipse.cdt.debug.ui.command.reverseToggle"/>
-<hide_menu_item_id id="org.eclipse.debug.internal.ui.actions.ProfileWithConfigurationAction"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.edit.text.rename.element"/>
-<hide_menu_item_id id="org.eclipse.mylyn.tasks.ui.command.goToPreviousUnread"/>
+<hide_menu_item_id id="org.eclipse.debug.internal.ui.actions.ProfileWithConfigurationAction"/>
 <hide_menu_item_id id="org.eclipse.jdt.debug.ui.commands.AddExceptionBreakpoint"/>
-<hide_menu_item_id id="org.eclipse.jdt.ui.source.menu"/>
+<hide_menu_item_id id="org.eclipse.mylyn.tasks.ui.command.goToPreviousUnread"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.references.in.hierarchy"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.source.menu"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.edit.text.c.format"/>
-<hide_menu_item_id id="org.eclipse.cdt.debug.ui.command.reverseStepOver"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.search.declarations.in.working.set"/>
+<hide_menu_item_id id="org.eclipse.cdt.debug.ui.command.reverseStepOver"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.refactor.extract.local.variable"/>
-<hide_menu_item_id id="org.eclipse.ui.navigate.forward"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.edit.text.c.toggle.comment"/>
-<hide_menu_item_id id="org.eclipse.cdt.ui.edit.open.type.hierarchy"/>
+<hide_menu_item_id id="org.eclipse.ui.navigate.forward"/>
 <hide_menu_item_id id="org.eclipse.search.ui.performTextSearchProject"/>
+<hide_menu_item_id id="org.eclipse.cdt.ui.edit.open.type.hierarchy"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.edit.text.c.remove.block.comment"/>
 <hide_toolbar_item_id id="org.eclipse.cdt.ui.navigate.opentype"/>
 <hide_toolbar_item_id id="com.ti.dvt.profile.setup.actionSet"/>
@@ -663,14 +604,14 @@
 <hide_toolbar_item_id id="org.eclipse.ui.workbench.navigate"/>
 <hide_toolbar_item_id id="org.eclipse.ui.navigate.previous"/>
 <hide_toolbar_item_id id="com.ti.dvt.profile2.setup.action.enableProfile"/>
-<hide_toolbar_item_id id="org.eclipse.mylyn.tasks.ui.command.openTask"/>
 <hide_toolbar_item_id id="com.ti.dvt.profile.setup.action.enableProfile"/>
-<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<hide_toolbar_item_id id="org.eclipse.mylyn.tasks.ui.command.openTask"/>
 <hide_toolbar_item_id id="org.eclipse.ui.navigate.forwardHistory"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.ui.navigate.next"/>
 <hide_toolbar_item_id id="org.eclipse.cdt.ui.buildConfigToolbarAction"/>
-<hide_toolbar_item_id id="org.eclipse.debug.internal.ui.actions.RunDropDownAction"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.gotoLastEditPosition"/>
+<hide_toolbar_item_id id="org.eclipse.debug.internal.ui.actions.RunDropDownAction"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
 <view id="org.eclipse.debug.ui.ExpressionView"/>
@@ -741,7 +682,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1a5a709" ratio="0.70855904" ratioLeft="654" ratioRight="269" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1a5a709" ratio="0.503792" ratioLeft="465" ratioRight="458" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -750,7 +691,7 @@
 </folder>
 </info>
 <info folder="true" part="topRight" ratio="0.44984326" ratioLeft="1148" ratioRight="1404" relationship="2" relative="topLeft">
-<folder activePageID="org.eclipse.debug.ui.BreakpointView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
 <page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="Expressions"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="Registers"/>
@@ -768,155 +709,7 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Memory_Test/src/mem_test_main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Memory_Test/src/KeyStone_DDR_Init.c"/>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" uri="file:/C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl/csl_bootcfgaux.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ti.ccstudio.ui.cmdFileEditor" path="/HelloWorld/platform_utils.cmd"/>
-</editors>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="17959" y="18"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="25893" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="9510" y="0"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="3090" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="18039" y="0"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="18025" y="0"/>
-</item>
-<item historyLabel="csl_bootcfgaux.h" index="2">
-<position info="not_deleted" x="10981" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="18083" y="0"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="18025" y="0"/>
-</item>
-<item historyLabel="csl_bootcfgaux.h" index="2">
-<position info="not_deleted" x="10981" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="15532" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="9261" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="9413" y="74"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="6278" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="9530" y="0"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="6278" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="9281" y="6"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="18025" y="0"/>
-</item>
-<item historyLabel="csl_bootcfgaux.h" index="2">
-<position info="not_deleted" x="10981" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="15532" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="25906" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="53254" y="0"/>
-</item>
-<item historyLabel="platform_utils.cmd" index="3">
-<position info="not_deleted" x="1839" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="2646" y="23"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="25918" y="0"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="18195" y="0"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="8905" y="0"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="20633" y="9"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="52312" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="25918" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="52675" y="8"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="52412" y="0"/>
-</item>
-<item historyLabel="mem_test_main.c" index="0">
-<position info="not_deleted" x="8050" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="52412" y="0"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="17959" y="18"/>
-</item>
-<item historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="26305" y="38"/>
-</item>
-<item active="true" historyLabel="KeyStone_DDR_Init.c" index="1">
-<position info="not_deleted" x="10269" y="38"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -941,44 +734,32 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="csl_bootcfgaux.h" tooltip="C:\ti\pdk_C6678_1_1_2_5\packages\ti\csl\csl_bootcfgaux.h">
-<persistable uri="file:/C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl/csl_bootcfgaux.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="SRIO_2DSP_Test.c" tooltip="SRIO/src/SRIO_2DSP_Test.c">
+<persistable path="/SRIO/src/SRIO_2DSP_Test.c"/>
 </file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="KeyStone_DDR_Init.c" tooltip="C:\Users\tbh\workspace_v5_2\common\KeyStone_DDR_Init.c">
-<persistable path="C:\Users\tbh\workspace_v5_2\common\KeyStone_DDR_Init.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="SRIO_Test.c" tooltip="SRIO/src/SRIO_Test.c">
+<persistable path="/SRIO/src/SRIO_Test.c"/>
 </file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="KeyStone_common.h" tooltip="C:\Users\tbh\workspace_v5_2\common\KeyStone_common.h">
-<persistable path="C:\Users\tbh\workspace_v5_2\common\KeyStone_common.h" project="Memory_Test"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="SPI_main.c" tooltip="SPI/src/SPI_main.c">
+<persistable path="/SPI/src/SPI_main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="KeyStone_common.c" tooltip="Memory_Test/src/KeyStone_common.c">
-<persistable path="/Memory_Test/src/KeyStone_common.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="SPI_loopback_TEST.h" tooltip="SPI/src/SPI_loopback_TEST.h">
+<persistable path="/SPI/src/SPI_loopback_TEST.h"/>
 </file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="cslr_bootcfg.h" tooltip="C:\ti\pdk_C6678_1_1_2_5\packages\ti\csl\cslr_bootcfg.h">
-<persistable path="C:\ti\pdk_C6678_1_1_2_5\packages\ti\csl\cslr_bootcfg.h" project="Memory_Test"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Hyperlink_Test.c" tooltip="HyperLink/src/Hyperlink_Test.c">
+<persistable path="/HyperLink/src/Hyperlink_Test.c"/>
 </file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="csl_bootcfg.h" tooltip="C:\ti\pdk_C6678_1_1_2_5\packages\ti\csl\csl_bootcfg.h">
-<persistable path="C:\ti\pdk_C6678_1_1_2_5\packages\ti\csl\csl_bootcfg.h" project="Memory_Test"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="KeyStone_DDR_Init.c" tooltip="EMIF/src/KeyStone_DDR_Init.c">
+<persistable path="/EMIF/src/KeyStone_DDR_Init.c"/>
 </file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="csl_emif4f.h" tooltip="C:\ti\pdk_C6678_1_1_2_5\packages\ti\csl\csl_emif4f.h">
-<persistable path="C:\ti\pdk_C6678_1_1_2_5\packages\ti\csl\csl_emif4f.h" project="Memory_Test"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ti.ccstudio.system.setup.editor.editors.MultiPageXMLEditor" name="TMS320C6678.ccxml" tooltip="EMIF/TMS320C6678.ccxml">
+<persistable path="/EMIF/TMS320C6678.ccxml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ti.ccstudio.ui.cmdFileEditor" name="C6678_unified.cmd" tooltip="Memory_Test/C6678_unified.cmd">
-<persistable path="/Memory_Test/C6678_unified.cmd"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="EMIF_main.c" tooltip="EMIF/src/EMIF_main.c">
+<persistable path="/EMIF/src/EMIF_main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ti.ccstudio.ui.cmdFileEditor" name="KeyStone_mem_Test.cmd" tooltip="Memory_Test/KeyStone_mem_Test.cmd">
-<persistable path="/Memory_Test/KeyStone_mem_Test.cmd"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ti.ccstudio.system.setup.editor.editors.MultiPageXMLEditor" name="TMS320C6678.ccxml" tooltip="Memory_Test/TMS320C6678.ccxml">
-<persistable path="/Memory_Test/TMS320C6678.ccxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ti.ccstudio.ui.cmdFileEditor" name="platform_utils.cmd" tooltip="HelloWorld/platform_utils.cmd">
-<persistable path="/HelloWorld/platform_utils.cmd"/>
-</file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="KeyStone_DDR_Init.h" tooltip="C:\Users\tbh\workspace_v5_2\common\KeyStone_DDR_Init.h">
-<persistable path="C:\Users\tbh\workspace_v5_2\common\KeyStone_DDR_Init.h" project="Memory_Test"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="KeyStone_DDR_Init.c" tooltip="Memory_Test/src/KeyStone_DDR_Init.c">
-<persistable path="/Memory_Test/src/KeyStone_DDR_Init.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="I2C_EEPROM_Test.c" tooltip="I2C/src/I2C_EEPROM_Test.c">
+<persistable path="/I2C/src/I2C_EEPROM_Test.c"/>
 </file>
 </mruList>
 </workbench>

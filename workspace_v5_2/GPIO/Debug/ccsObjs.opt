@@ -1,0 +1,1 @@
+"./src/KeyStone_common.obj" "./src/GPIO_vectors.obj" "./src/GPIO_main.obj" -l"libc.a" -l"C:\ti\pdk_C6678_1_1_2_5\packages\ti\platform\evmc6678l\platform_lib\lib\debug\ti.platform.evm6678l.ae66" "../KeyStone.cmd" 

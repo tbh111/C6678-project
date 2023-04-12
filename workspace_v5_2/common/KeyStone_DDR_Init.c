@@ -318,7 +318,7 @@ void KeyStone_DDR_read_incremental_leveling(Uint32 init_interval_us)
 	if(gpDDR_regs->STATUS&(CSL_EMIF4F_STATUS_REG_RDLVLGATETO_MASK
 		|CSL_EMIF4F_STATUS_REG_RDLVLTO_MASK))
 	{
-		printf("DDR3 leveling has failed, STATUS = 0x%x\n", gpDDR_regs->STATUS);
+		printf("DDR3 incremental leveling has failed, STATUS = 0x%x\n", gpDDR_regs->STATUS);
 	}
 }
 
@@ -519,12 +519,13 @@ void C6678_EVM_DDR_Init(float clock_MHz, DDR_ECC_Config * ecc_cfg)
 
 	/*Invert Clock Out*/
 	KeyStone_DDR_clock_phase_init(TRUE);
+	gpBootCfgRegs->DDR3_CONFIG_REG[0] |= 0xF;
 
 	//if(0==uiRev)
-	{//Rev 1.0 does not support read eye leveling
+	//{//Rev 1.0 does not support read eye leveling
 		//Set bit 9 = 1 to use forced ratio leveling for read DQS
 		gpBootCfgRegs->DDR3_CONFIG_REG[23] |= 0x00000200; 
-	}
+	//}
 	
 	//initial vale for leveling
 	/*WRLVL_INIT_RATIO*/
@@ -578,100 +579,143 @@ void C6678_EVM_DDR_Init(float clock_MHz, DDR_ECC_Config * ecc_cfg)
 	This is a JEDEC requirement that we have 500us delay between reset de-assert 
 	and cke assert and then program the correct refresh rate
 	The DDR internal clock is divide by 16 before SDCFG write*/
-	gpDDR_regs->SDRAM_REF_CTRL = CSL_EMIF4F_SDRAM_REF_CTRL_REG_INITREF_DIS_MASK
-		|(unsigned int)(500.f*clock_MHz/16.f);
+//	gpDDR_regs->SDRAM_REF_CTRL = CSL_EMIF4F_SDRAM_REF_CTRL_REG_INITREF_DIS_MASK // 0x80000000u
+//		|(unsigned int)(500.f*clock_MHz/16.f);
+	gpDDR_regs->SDRAM_REF_CTRL = 0x00005162;
 
-	gpDDR_regs->SDRAM_TIM_1 =
-		((unsigned int)(13.5*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_RP_SHIFT)|
-		((unsigned int)(13.5*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_RCD_SHIFT)|
-		((unsigned int)(15*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_WR_SHIFT)|
-		((unsigned int)(36*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_RAS_SHIFT)|
-		((unsigned int)(49.5*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_RC_SHIFT)|
-		((unsigned int)(45*clock_MHz/4000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_RRD_SHIFT)| 	/*T_RRD = (tFAW/(4*tCK)) 每 1*/
-		((unsigned int)(7.5*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_WTR_SHIFT);
-	gpDDR_regs->SDRAM_TIM_2   = 
-		((unsigned int)(6*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_2_REG_T_XP_SHIFT)|
-		((unsigned int)(120*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_2_REG_T_XSNR_SHIFT)| 	/*T_XSNR = (tXS /tCK)每 1*/
-		((512-1)<<CSL_EMIF4F_SDRAM_TIM_2_REG_T_XSRD_SHIFT)| 	/*T_XSRD =tXSDLL每 1*/
-		((unsigned int)(7.5*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_2_REG_T_RTP_SHIFT)|
-		((unsigned int)(5.625*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_2_REG_T_CKE_SHIFT);
-	gpDDR_regs->SDRAM_TIM_3   = 
-		(5<<CSL_EMIF4F_SDRAM_TIM_3_REG_T_PDLL_UL_SHIFT)| 	/*This field must always be programmed to 0x5.*/
-		((5)<<CSL_EMIF4F_SDRAM_TIM_3_REG_T_CSTA_SHIFT)| 	/*This field should be set according to PHY requirements as 0x5.*/
-		((unsigned int)(5.625*clock_MHz/1000.f+0.9999f)<<CSL_EMIF4F_SDRAM_TIM_3_REG_T_CKESR_SHIFT)|
-		((64-1)<<CSL_EMIF4F_SDRAM_TIM_3_REG_ZQ_ZQCS_SHIFT)|
-		((unsigned int)(110*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_3_REG_T_RFC_SHIFT)|
-		(15<<CSL_EMIF4F_SDRAM_TIM_3_REG_T_RAS_MAX_SHIFT); 	/*This field must always be programmed to 0xF.*/
+	gpDDR_regs->SDRAM_TIM_1 = // 0x1113783C
+			(0x8 << 25)  |
+			(0x8 << 21)  |
+			(0x9 << 17)  |
+			(0x17 << 12) |
+			(0x20 << 6)  |
+			(0x7 << 3)   |
+			 0x4;
 
-	gpDDR_regs->DDR_PHY_CTRL_1  = 0x00100100|
-		(12<<CSL_EMIF4F_DDR_PHY_CTRL_1_REG_READ_LATENCY_SHIFT); 	/*between CAS Latency + 1 and CAS Latency + 7*/
+	gpDDR_regs->SDRAM_TIM_2 = // 0x30717FE3
+			(0x3 << 28)  |
+			(0x71 << 16) |
+			(0x1FFF << 6)|
+			(0x4 << 3)   |
+			 0x3;
 
-	gpDDR_regs->ZQ_CONFIG = 
-		((0)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_CS1EN_SHIFT)|
-		((1)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_CS0EN_SHIFT)|
-		((1)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_DUALCALEN_SHIFT)| 	/*This bit should always be set to 1.*/
-		((1)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_SFEXITEN_SHIFT)|
-		((512/256-1)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_ZQINIT_MULT_SHIFT)| 	/*T_ZQ_ZQINIT_MULT = (tZQinit/tZQoper 每 1)*/
-		((256/64-1)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_ZQCL_MULT_SHIFT)| 	/*T_ZQ_ZQCL_MULT = (tZQoper/tZQCS 每 1)*/
-		/*interval between ZQCS commands = 0.5%/((TSens x Tdriftrate) + (VSens x Vdriftrate))
-		=0.5%/((max (dRTTdT, dRONdTM) x Tdriftrate in C/second) + (max(dRTTdV, dRONdVM) x Vdriftrate in mV/second))
-		this time need be converted to refresh period number*/
-		(((unsigned int)(1000000000*0.5/(1.5*1.2+0.15*15))/(64000000/8192))
-			<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_REFINTERVAL_SHIFT);
+	gpDDR_regs->SDRAM_TIM_3 = // 0x559F86AF
+			(0x5 << 28)  |
+			(0x5 << 24)  |
+			(0x4 << 21)  |
+			(0x3F << 15) |
+			(0x6A << 4)  |
+			 0xF;
+
+//	gpDDR_regs->SDRAM_TIM_1 =
+//		((unsigned int)(13.5*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_RP_SHIFT)|
+//		((unsigned int)(13.5*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_RCD_SHIFT)|
+//		((unsigned int)(15*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_WR_SHIFT)|
+//		((unsigned int)(36*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_RAS_SHIFT)|
+//		((unsigned int)(49.5*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_RC_SHIFT)|
+//		((unsigned int)(45*clock_MHz/4000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_RRD_SHIFT)| 	/*T_RRD = (tFAW/(4*tCK)) 每 1*/
+//		((unsigned int)(7.5*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_1_REG_T_WTR_SHIFT);
+//	gpDDR_regs->SDRAM_TIM_2   =
+//		((unsigned int)(6*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_2_REG_T_XP_SHIFT)|
+//		((unsigned int)(120*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_2_REG_T_XSNR_SHIFT)| 	/*T_XSNR = (tXS /tCK)每 1*/
+//		((512-1)<<CSL_EMIF4F_SDRAM_TIM_2_REG_T_XSRD_SHIFT)| 	/*T_XSRD =tXSDLL每 1*/
+//		((unsigned int)(7.5*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_2_REG_T_RTP_SHIFT)|
+//		((unsigned int)(5.625*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_2_REG_T_CKE_SHIFT);
+//	gpDDR_regs->SDRAM_TIM_3   =
+//		(5<<CSL_EMIF4F_SDRAM_TIM_3_REG_T_PDLL_UL_SHIFT)| 	/*This field must always be programmed to 0x5.*/
+//		((5)<<CSL_EMIF4F_SDRAM_TIM_3_REG_T_CSTA_SHIFT)| 	/*This field should be set according to PHY requirements as 0x5.*/
+//		((unsigned int)(5.625*clock_MHz/1000.f+0.9999f)<<CSL_EMIF4F_SDRAM_TIM_3_REG_T_CKESR_SHIFT)|
+//		((64-1)<<CSL_EMIF4F_SDRAM_TIM_3_REG_ZQ_ZQCS_SHIFT)|
+//		((unsigned int)(110*clock_MHz/1000.f-0.0001f)<<CSL_EMIF4F_SDRAM_TIM_3_REG_T_RFC_SHIFT)|
+//		(15<<CSL_EMIF4F_SDRAM_TIM_3_REG_T_RAS_MAX_SHIFT); 	/*This field must always be programmed to 0xF.*/
+
+//	gpDDR_regs->DDR_PHY_CTRL_1  = 0x00100100|
+//		(12<<CSL_EMIF4F_DDR_PHY_CTRL_1_REG_READ_LATENCY_SHIFT); 	/*between CAS Latency + 1 and CAS Latency + 7*/
+	gpDDR_regs->DDR_PHY_CTRL_1 = 0x0010010F;
+	gpDDR_regs->ZQ_CONFIG = 0x70073214;
+//	gpDDR_regs->ZQ_CONFIG =
+//		((0)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_CS1EN_SHIFT)|
+//		((1)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_CS0EN_SHIFT)|
+//		((1)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_DUALCALEN_SHIFT)| 	/*This bit should always be set to 1.*/
+//		((1)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_SFEXITEN_SHIFT)|
+//		((512/256-1)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_ZQINIT_MULT_SHIFT)| 	/*T_ZQ_ZQINIT_MULT = (tZQinit/tZQoper 每 1)*/
+//		((256/64-1)<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_ZQCL_MULT_SHIFT)| 	/*T_ZQ_ZQCL_MULT = (tZQoper/tZQCS 每 1)*/
+//		/*interval between ZQCS commands = 0.5%/((TSens x Tdriftrate) + (VSens x Vdriftrate))
+//		=0.5%/((max (dRTTdT, dRONdTM) x Tdriftrate in C/second) + (max(dRTTdV, dRONdVM) x Vdriftrate in mV/second))
+//		this time need be converted to refresh period number*/
+//		(((unsigned int)(1000000000*0.5/(1.5*1.2+0.15*15))/(64000000/8192))
+//			<<CSL_EMIF4F_ZQ_CONFIG_REG_ZQ_REFINTERVAL_SHIFT);
+
+	gpDDR_regs->PWR_MGMT_CTRL = 0x0;
+	gpDDR_regs->SDRAM_REF_CTRL = 0x00005162;
 
 	/*map priority 0,1,2,3 to COS0,
 	map priority 3,5,6,7 to COS1*/
-	gpDDR_regs->PRI_COS_MAP = 
-		((1)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_COS_MAP_EN_SHIFT)|
-		((1)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_7_COS_SHIFT)|
-		((1)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_6_COS_SHIFT)|
-		((1)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_5_COS_SHIFT)|
-		((1)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_4_COS_SHIFT)|
-		((0)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_3_COS_SHIFT)|
-		((0)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_2_COS_SHIFT)|
-		((0)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_1_COS_SHIFT)|
-		((0)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_0_COS_SHIFT);
-
-	/*master based COS map is disabled*/
-	gpDDR_regs->MSTID_COS_1_MAP= 0;
-	gpDDR_regs->MSTID_COS_2_MAP= 0;
-
-	/*LAT_CONFIG*/
-	gpDDR_regs->VBUSM_CONFIG= 
-		(8<<CSL_EMIF4F_VBUSM_CONFIG_REG_COS_COUNT_1_SHIFT)|
-		(16<<CSL_EMIF4F_VBUSM_CONFIG_REG_COS_COUNT_2_SHIFT)|
-		(32<<CSL_EMIF4F_VBUSM_CONFIG_REG_PR_OLD_COUNT_SHIFT);
-
-	/*Read Write Execution Threshold*/
-	gpDDR_regs->RD_WR_EXEC_THRSH= 
-		((1024/8/8-1)<<CSL_EMIF4F_RD_WR_EXEC_THRSH_REG_RD_THRSH_SHIFT)
-		|((512/8/8-1)<<CSL_EMIF4F_RD_WR_EXEC_THRSH_REG_WR_THRSH_SHIFT);
-
-	KeyStone_DDR_ECC_init(ecc_cfg);
+//	gpDDR_regs->PRI_COS_MAP =
+//		((1)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_COS_MAP_EN_SHIFT)|
+//		((1)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_7_COS_SHIFT)|
+//		((1)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_6_COS_SHIFT)|
+//		((1)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_5_COS_SHIFT)|
+//		((1)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_4_COS_SHIFT)|
+//		((0)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_3_COS_SHIFT)|
+//		((0)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_2_COS_SHIFT)|
+//		((0)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_1_COS_SHIFT)|
+//		((0)<<CSL_EMIF4F_PRI_COS_MAP_REG_PRI_0_COS_SHIFT);
+//
+//	/*master based COS map is disabled*/
+//	gpDDR_regs->MSTID_COS_1_MAP= 0;
+//	gpDDR_regs->MSTID_COS_2_MAP= 0;
+//
+//	/*LAT_CONFIG*/
+//	gpDDR_regs->VBUSM_CONFIG=
+//		(8<<CSL_EMIF4F_VBUSM_CONFIG_REG_COS_COUNT_1_SHIFT)|
+//		(16<<CSL_EMIF4F_VBUSM_CONFIG_REG_COS_COUNT_2_SHIFT)|
+//		(32<<CSL_EMIF4F_VBUSM_CONFIG_REG_PR_OLD_COUNT_SHIFT);
+//
+//	/*Read Write Execution Threshold*/
+//	gpDDR_regs->RD_WR_EXEC_THRSH=
+//		((1024/8/8-1)<<CSL_EMIF4F_RD_WR_EXEC_THRSH_REG_RD_THRSH_SHIFT)
+//		|((512/8/8-1)<<CSL_EMIF4F_RD_WR_EXEC_THRSH_REG_WR_THRSH_SHIFT);
+//
+//	KeyStone_DDR_ECC_init(ecc_cfg);
 
 	/* enables DRAM configuration.  It still has the refresh interval 
 	programmed to the longer number needed during DRAM initialization.*/
-	gpDDR_regs->SDRAM_REF_CTRL = (unsigned int)(500.f*clock_MHz/16.f); 
+//	gpDDR_regs->SDRAM_REF_CTRL = (unsigned int)(500.f*clock_MHz/16.f);
 
-	gpDDR_regs->SDRAM_CONFIG = 
-		(3<<CSL_EMIF4F_SDRAM_CONFIG_REG_SDRAM_TYPE_SHIFT)| 	/*Set to 3 for DDR3. All other values reserved.*/
-		(0<<CSL_EMIF4F_SDRAM_CONFIG_REG_IBANK_POS_SHIFT)|
-		(DDR_TERM_RZQ_OVER_6<<CSL_EMIF4F_SDRAM_CONFIG_REG_DDR_TERM_SHIFT)|
-		(DDR_DYN_ODT_DISABLED<<CSL_EMIF4F_SDRAM_CONFIG_REG_DYN_ODT_SHIFT)|
-		(0<<CSL_EMIF4F_SDRAM_CONFIG_REG_DDR_DISABLE_DLL_SHIFT)|
-		(SDRAM_DRIVE_RZQ_OVER_7<<CSL_EMIF4F_SDRAM_CONFIG_REG_SDRAM_DRIVE_SHIFT)|
-		(DDR_CWL_7<<CSL_EMIF4F_SDRAM_CONFIG_REG_CWL_SHIFT)|
-		(DDR_BUS_WIDTH_64<<CSL_EMIF4F_SDRAM_CONFIG_REG_NARROW_MODE_SHIFT)|
-		(DDR_CL_9<<CSL_EMIF4F_SDRAM_CONFIG_REG_CL_SHIFT)|
-		(DDR_ROW_SIZE_13_BIT<<CSL_EMIF4F_SDRAM_CONFIG_REG_ROWSIZE_SHIFT)|
-		(DDR_BANK_NUM_8<<CSL_EMIF4F_SDRAM_CONFIG_REG_IBANK_SHIFT)|
-		(0<<CSL_EMIF4F_SDRAM_CONFIG_REG_EBANK_SHIFT)|
-		(DDR_PAGE_SIZE_10_BIT_1024_WORD<<CSL_EMIF4F_SDRAM_CONFIG_REG_PAGESIZE_SHIFT);
+//	gpDDR_regs->SDRAM_CONFIG =
+//		(3<<CSL_EMIF4F_SDRAM_CONFIG_REG_SDRAM_TYPE_SHIFT)| 	/*Set to 3 for DDR3. All other values reserved.*/
+//		(0<<CSL_EMIF4F_SDRAM_CONFIG_REG_IBANK_POS_SHIFT)|
+//		(DDR_TERM_RZQ_OVER_6<<CSL_EMIF4F_SDRAM_CONFIG_REG_DDR_TERM_SHIFT)|
+//		(DDR_DYN_ODT_DISABLED<<CSL_EMIF4F_SDRAM_CONFIG_REG_DYN_ODT_SHIFT)|
+//		(0<<CSL_EMIF4F_SDRAM_CONFIG_REG_DDR_DISABLE_DLL_SHIFT)|
+//		(SDRAM_DRIVE_RZQ_OVER_7<<CSL_EMIF4F_SDRAM_CONFIG_REG_SDRAM_DRIVE_SHIFT)|
+//		(DDR_CWL_7<<CSL_EMIF4F_SDRAM_CONFIG_REG_CWL_SHIFT)|
+//		(DDR_BUS_WIDTH_64<<CSL_EMIF4F_SDRAM_CONFIG_REG_NARROW_MODE_SHIFT)|
+//		(DDR_CL_9<<CSL_EMIF4F_SDRAM_CONFIG_REG_CL_SHIFT)|
+//		(DDR_ROW_SIZE_13_BIT<<CSL_EMIF4F_SDRAM_CONFIG_REG_ROWSIZE_SHIFT)|
+//		(DDR_BANK_NUM_8<<CSL_EMIF4F_SDRAM_CONFIG_REG_IBANK_SHIFT)|
+//		(0<<CSL_EMIF4F_SDRAM_CONFIG_REG_EBANK_SHIFT)|
+//		(DDR_PAGE_SIZE_10_BIT_1024_WORD<<CSL_EMIF4F_SDRAM_CONFIG_REG_PAGESIZE_SHIFT);
+	gpDDR_regs->SDRAM_CONFIG = // 0x63062A32
+			(0x3 << 29) |
+			(0x0 << 27) |
+			(0x3 << 24) |
+			(0x0 << 21) |
+			(0x1 << 18) |
+			(0x2 << 16) |
+			(0x0 << 14) |
+			(0xA << 10) |
+			(0x4 << 7)  |
+			(0x3 << 4)  |
+			(0x0 << 3)  |
+			 0x2;
 
 	TSC_delay_us(600); 	//Wait 600us for HW init to complete
 
 //	gpDDR_regs->SDRAM_REF_CTRL    = 64000000/8192/(1000/clock_MHz);
-	gpDDR_regs->SDRAM_REF_CTRL    = (unsigned int)64000.f*clock_MHz/8192.f;
+//	gpDDR_regs->SDRAM_REF_CTRL    = (unsigned int)64000.f*clock_MHz/8192.f;
+	gpDDR_regs->SDRAM_REF_CTRL = 0x00001450;
 
 	KeyStone_DDR_full_leveling();
 
@@ -685,6 +729,7 @@ void C6678_EVM_DDR_Init(float clock_MHz, DDR_ECC_Config * ecc_cfg)
 		eye sample point after multiple successive iterations.*/
 		KeyStone_DDR_read_incremental_leveling(100);
 	}
+	CSL_BootCfgLockKicker();
 }
 
 /*****************************************************************************

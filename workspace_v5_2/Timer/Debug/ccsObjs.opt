@@ -1,0 +1,1 @@
+"./src/timer_vectors.obj" "./src/timer_main.obj" "./src/KeyStone_common.obj" -l"C:\ti\pdk_C6678_1_1_2_5\packages\ti\platform\evmc6678l\platform_lib\lib\debug\ti.platform.evm6678l.ae66" -l"libc.a" "../KeyStone.cmd" 

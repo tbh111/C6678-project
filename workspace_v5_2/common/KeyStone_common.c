@@ -382,10 +382,20 @@ int KeyStone_PLL_init (PLL_ControlRegs * PLL_Regs, unsigned int inputDivisor,
 	/*3. Program PLLM and PLLD in PLLCTL0 register*/
 	/*4. Program BWADJ[7:0] in PLLCTL0 and BWADJ[11:8] in PLLCTL1 register. 
 	BWADJ value must be set to ((PLLM + 1) >> 1) ¨C 1)*/
-	PLL_Regs->PLL_CTL0 = ((multiplier/2-1)<<PLLCTL0_BWADJ_SHIFT)
-		|((outputDivisor-1)<<PLLCTL_OD_SHIFT)
-		|((multiplier-1)<<PLLCTL0_PLLM_SHIFT)
-		|(inputDivisor-1);
+
+	/*
+     * DDR3PLLCTL0 Bit map
+     * |31...24    |23     |22...19       |18...6   |5...0 |
+     * |BWADJ[7:0] |BYPASS |Reserved      |PLLM     |PLLD  |
+     *
+	 * DDR3PLLCTL1 Bit map
+     * |31...14    |13     |12...7        |6     |5 4       |3...0      |
+     * |Reserved   |PLLRST |Reserved      |ENSAT |Reserved  |BWADJ[11:8]|
+	 */
+	PLL_Regs->PLL_CTL0 = ((multiplier/2-1)<<PLLCTL0_BWADJ_SHIFT) // shift 24 bit [31:24] BWADJ[7:0]
+		|((outputDivisor-1)<<PLLCTL_OD_SHIFT) // shift 19 bit, reserved in ddr3 control register
+		|((multiplier-1)<<PLLCTL0_PLLM_SHIFT) // shift 6 bit [18:6] PLLM
+		|(inputDivisor-1); // [5:0] PLLD
 
 	PLL_Regs->PLL_CTL1 &= ~PLLCTL1_BWADJ_MASK;
 	PLL_Regs->PLL_CTL1 |= (multiplier/2-1)>>8; /*BWADJ[11:8]*/
@@ -399,10 +409,13 @@ int KeyStone_PLL_init (PLL_ControlRegs * PLL_Regs, unsigned int inputDivisor,
 	/*For PASS, In PASSPLLCTL1, write PLLSELECT = 1 
 	(for selecting the output of PA PLL as the input to PASS)*/
 	if(PLL_Regs==(PLL_ControlRegs *)gpBootCfgRegs->PA_PLL_CTL0)
-		PLL_Regs->PLL_CTL1 |= PLLCTL1_PAPLL_MASK;
+		PLL_Regs->PLL_CTL1 |= PLLCTL1_PAPLL_MASK; // shift 13 bit
 
 	/*7. In PLLCTL1, write PLLRST = 0 (PLL reset is released)*/
-	PLL_Regs->PLL_CTL1 &= ~PLLCTL1_PLLRESET_MASK;   //Clear RESET bit
+	if(PLL_Regs==(PLL_ControlRegs *)gpBootCfgRegs->DDR3_PLL_CTL0)
+		PLL_Regs->PLL_CTL1 &= ~PLLCTL1_PAPLL_MASK; // Clear RESET bit  shift 13 bit
+	else
+		PLL_Regs->PLL_CTL1 &= ~PLLCTL1_PLLRESET_MASK;   // Clear RESET bit  shift 14 bit
 
 	/*8. Wait for at least 500 * REFCLK cycles * (PLLD + 1) (PLL lock time)*/
 	TSC_delay_us(500);

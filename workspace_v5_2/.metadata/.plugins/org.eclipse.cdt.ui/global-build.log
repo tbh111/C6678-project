@@ -1,15 +1,19 @@
 
-**** Build of configuration Debug for project Memory_Test ****
+**** Build of configuration Debug for project PCIE ****
 
 C:\ti\ccsv5\utils\bin\gmake -j20 -k all 
-'Building file: C:/Users/tbh/workspace_v5_2/common/INT_vectors.asm'
+'Building file: C:/Users/tbh/workspace_v5_2/common/CPU_LD_ST_Test.asm'
+'Building file: C:/Users/tbh/workspace_v5_2/common/CPU_access_test.c'
 'Building file: C:/Users/tbh/workspace_v5_2/common/KeyStone_DDR_Init.c'
+'Building file: C:/Users/tbh/workspace_v5_2/common/KeyStone_PCIE_Init_drv.c'
 'Building file: C:/Users/tbh/workspace_v5_2/common/KeyStone_common.c'
+'Building file: C:/Users/tbh/workspace_v5_2/common/Keystone_Serdes_init.c'
+'Building file: ../src/PCIE_DSP_core_performance.c'
+'Building file: ../src/PCIE_Edma_Performance.c'
+'Building file: ../src/PCIE_Intc.c'
+'Building file: ../src/PCIE_Test.c'
+'Building file: ../src/PCIE_vectors.asm'
 'Building file: C:/Users/tbh/workspace_v5_2/common/common_test.c'
-'Building file: ../src/mem_test_DMA.c'
-'Building file: ../src/mem_test_DSP_core.c'
-'Building file: ../src/mem_test_get_unused_L2_address.c'
-'Building file: ../src/mem_test_main.c'
 'Invoking: C6000 Compiler'
 'Invoking: C6000 Compiler'
 'Invoking: C6000 Compiler'
@@ -17,70 +21,64 @@ C:\ti\ccsv5\utils\bin\gmake -j20 -k all
 'Invoking: C6000 Compiler'
 'Invoking: C6000 Compiler'
 'Invoking: C6000 Compiler'
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 -g --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/INT_vectors.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/INT_vectors.asm"
 'Invoking: C6000 Compiler'
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 -g --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/KeyStone_DDR_Init.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/KeyStone_DDR_Init.c"
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 -g --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/KeyStone_common.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/KeyStone_common.c"
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 -g --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/common_test.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/common_test.c"
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 -g --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/mem_test_DMA.pp" --obj_directory="src"  "../src/mem_test_DMA.c"
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 -g --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/mem_test_DSP_core.pp" --obj_directory="src"  "../src/mem_test_DSP_core.c"
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 -g --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/mem_test_get_unused_L2_address.pp" --obj_directory="src"  "../src/mem_test_get_unused_L2_address.c"
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 -g --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/mem_test_main.pp" --obj_directory="src"  "../src/mem_test_main.c"
-'Finished building: C:/Users/tbh/workspace_v5_2/common/INT_vectors.asm'
+'Invoking: C6000 Compiler'
+'Invoking: C6000 Compiler'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/CPU_LD_ST_Test.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/CPU_LD_ST_Test.asm"
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/CPU_access_test.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/CPU_access_test.c"
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/KeyStone_DDR_Init.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/KeyStone_DDR_Init.c"
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/KeyStone_PCIE_Init_drv.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/KeyStone_PCIE_Init_drv.c"
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/KeyStone_common.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/KeyStone_common.c"
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/Keystone_Serdes_init.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/Keystone_Serdes_init.c"
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/PCIE_DSP_core_performance.pp" --obj_directory="src"  "../src/PCIE_DSP_core_performance.c"
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/PCIE_Edma_Performance.pp" --obj_directory="src"  "../src/PCIE_Edma_Performance.c"
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/PCIE_Intc.pp" --obj_directory="src"  "../src/PCIE_Intc.c"
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/PCIE_Test.pp" --obj_directory="src"  "../src/PCIE_Test.c"
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/PCIE_vectors.pp" --obj_directory="src"  "../src/PCIE_vectors.asm"
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/Users/tbh/workspace_v5_2/common" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages/ti/csl" --include_path="C:/ti/pdk_C6678_1_1_2_5/packages" --display_error_number --diag_warning=225 --preproc_with_compile --preproc_dependency="src/common_test.pp" --obj_directory="src"  "C:/Users/tbh/workspace_v5_2/common/common_test.c"
+'Finished building: C:/Users/tbh/workspace_v5_2/common/CPU_LD_ST_Test.asm'
+'Finished building: ../src/PCIE_vectors.asm'
 ' '
-'Finished building: ../src/mem_test_get_unused_L2_address.c'
 ' '
-'Finished building: ../src/mem_test_DSP_core.c'
+'Finished building: C:/Users/tbh/workspace_v5_2/common/CPU_access_test.c'
 ' '
-"../src/mem_test_DMA.c", line 241: warning #190-D: enumerated type mixed with another type
-"../src/mem_test_DMA.c", line 246: warning #190-D: enumerated type mixed with another type
-"../src/mem_test_DMA.c", line 274: warning #190-D: enumerated type mixed with another type
-"../src/mem_test_DMA.c", line 289: warning #190-D: enumerated type mixed with another type
-"../src/mem_test_DMA.c", line 330: warning #190-D: enumerated type mixed with another type
-"../src/mem_test_DMA.c", line 344: warning #190-D: enumerated type mixed with another type
-'Finished building: ../src/mem_test_DMA.c'
+'Finished building: ../src/PCIE_Edma_Performance.c'
 ' '
-'Finished building: ../src/mem_test_main.c'
+'Finished building: ../src/PCIE_Intc.c'
+' '
+'Finished building: ../src/PCIE_DSP_core_performance.c'
+' '
+'Finished building: C:/Users/tbh/workspace_v5_2/common/Keystone_Serdes_init.c'
+' '
+'Finished building: ../src/PCIE_Test.c'
 ' '
 'Finished building: C:/Users/tbh/workspace_v5_2/common/common_test.c'
 ' '
 'Finished building: C:/Users/tbh/workspace_v5_2/common/KeyStone_DDR_Init.c'
 ' '
+'Finished building: C:/Users/tbh/workspace_v5_2/common/KeyStone_PCIE_Init_drv.c'
+' '
 'Finished building: C:/Users/tbh/workspace_v5_2/common/KeyStone_common.c'
 ' '
-'Building target: Memory_Test.out'
+'Building target: PCIE.out'
 'Invoking: C6000 Linker'
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 -g --display_error_number --diag_warning=225 -z -m"Memory_Test.map" -i"C:/ti/pdk_C6678_1_1_2_5/packages/ti/platform/evmc6678l/platform_lib/lib/debug" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --reread_libs --warn_sections --rom_model -o "Memory_Test.out"  "./src/mem_test_main.obj" "./src/mem_test_get_unused_L2_address.obj" "./src/mem_test_DSP_core.obj" "./src/mem_test_DMA.obj" "./src/common_test.obj" "./src/KeyStone_common.obj" "./src/KeyStone_DDR_Init.obj" "./src/INT_vectors.obj" -l"C:\ti\pdk_C6678_1_1_2_5\packages\ti\platform\evmc6678l\platform_lib\lib\debug\ti.platform.evm6678l.ae66" -l"libc.a" "../KeyStone_mem_Test.cmd" 
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6600 --abi=eabi -O3 --symdebug:none --display_error_number --diag_warning=225 -z -m"PCIE.map" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/pdk_C6678_1_1_2_5/packages/ti/platform/evmc6678l/platform_lib/lib/debug" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --reread_libs --warn_sections --rom_model -o "PCIE.out"  "./src/common_test.obj" "./src/PCIE_vectors.obj" "./src/PCIE_Test.obj" "./src/PCIE_Intc.obj" "./src/PCIE_Edma_Performance.obj" "./src/PCIE_DSP_core_performance.obj" "./src/Keystone_Serdes_init.obj" "./src/KeyStone_common.obj" "./src/KeyStone_PCIE_Init_drv.obj" "./src/KeyStone_DDR_Init.obj" "./src/CPU_access_test.obj" "./src/CPU_LD_ST_Test.obj" -l"C:\ti\pdk_C6678_1_1_2_5\packages\ti\platform\evmc6678l\platform_lib\lib\debug\ti.platform.evm6678l.ae66" -l"libc.a" "../KeyStone.cmd" 
 <Linking>
-warning #10247-D: creating output section "vecs" without a SECTIONS
-   specification
-'Finished building target: Memory_Test.out'
+'Finished building target: PCIE.out'
 ' '
 
 **** Build Finished ****
 
-**** Build of configuration Debug for project Memory_Test ****
+**** Build of configuration Debug for project PCIE ****
 
 C:\ti\ccsv5\utils\bin\gmake -j20 -k all 
 gmake: Nothing to be done for `all'.
 
 **** Build Finished ****
 
-**** Build of configuration Debug for project Memory_Test ****
-
-C:\ti\ccsv5\utils\bin\gmake -j20 -k all 
-gmake: Nothing to be done for `all'.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Memory_Test ****
-
-C:\ti\ccsv5\utils\bin\gmake -j20 -k all 
-gmake: Nothing to be done for `all'.
-
-**** Build Finished ****
-
-**** Build of configuration Debug for project Memory_Test ****
+**** Build of configuration Debug for project PCIE ****
 
 C:\ti\ccsv5\utils\bin\gmake -j20 -k all 
 gmake: Nothing to be done for `all'.
